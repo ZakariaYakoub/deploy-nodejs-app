@@ -1,0 +1,31 @@
+body{
+    color: yellow;
+}
+
+.home{
+    height: 100vh;
+    background:linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.1)),url('../imgs/background.jpg');
+    
+    
+    background-size: cover;
+}
+
+.Intro{
+    color: whitesmoke;
+    text-align: justify;
+    padding: 10% 20%;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.name{
+    font-size: 65px;
+}
+
+.specialty{
+    font-weight: 400;
+}
+
+
+
+
