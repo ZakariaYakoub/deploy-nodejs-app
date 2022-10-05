@@ -26,9 +26,19 @@ body{
     font-weight: 400;
 }
 
+.card-title{
+    padding-top: 2%;
+}
 
+.card-text{
+    text-align: justify;
+}
 
-.card{
-    margin: 10%;
-    height: 100px;
+.col-sm-7{
+    margin: 2% auto;
+}
+
+.card-body img{
+    border-radius: 25px;
+    width: 100% ;
 }
