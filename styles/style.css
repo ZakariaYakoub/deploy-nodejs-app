@@ -26,8 +26,9 @@ body{
     font-weight: 400;
 }
 
+
+
 .card{
-    text-align: center;
+    margin: 10%;
+    height: 100px;
 }
-
-
