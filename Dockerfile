@@ -8,5 +8,4 @@ COPY app/styles /usr/app/styles
 WORKDIR /usr/app
 
 RUN npm install
-EXPOSE 3000
 CMD ["node","server.js"]
