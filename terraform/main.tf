@@ -2,13 +2,27 @@ provider "aws" {
     region = "eu-central-1"
 }
 
-variable "vpc-cidr-block" {}
-variable "subnet-cidr-block" {}
-variable "avail_zone" {}
-variable "env_prefix" {}
-variable "myip" {}
-variable "pub_key_location" {}
-variable "private_key_location" {}
+variable "vpc-cidr-block" {
+    defaults = "10.0.0.0/16"
+}
+variable "subnet-cidr-block" {
+    defaults = "10.0.10.0/24"
+}
+variable "avail_zone" {
+    defaults = "eu-central-1b"
+}
+variable "env_prefix" {
+    defaults = "dev"
+}
+variable "myip" {
+    defaults = "41.249.6.55/32"
+}
+variable "pub_key_location" {
+    defaults = 
+}
+variable "private_key_location" {
+    defaults = 
+}
 
 
 
