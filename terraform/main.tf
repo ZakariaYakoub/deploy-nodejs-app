@@ -18,10 +18,10 @@ variable "myip" {
     defaults = "41.249.6.55/32"
 }
 variable "pub_key_location" {
-    defaults = 
+    defaults = "/var/jenkins_home/.ssh/id_rsa.pub"
 }
 variable "private_key_location" {
-    defaults = 
+    defaults = "/var/jenkins_home/.ssh/id_rsa"
 }
 
 
