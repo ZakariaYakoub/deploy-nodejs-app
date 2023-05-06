@@ -2,6 +2,12 @@ provider "aws" {
     region = "eu-central-1"
 }
 
+variable "ansible-ip" {
+    defaults = "20.111.8.195/32"
+}
+variable "jenkins-ip" {
+    defaults = "139.162.149.223/32"
+}
 variable "vpc-cidr-block" {
     defaults = "10.0.0.0/16"
 }
@@ -79,7 +85,7 @@ resource "aws_security_group" "myapp-sg" {
         from_port = 22
         to_port = 22
         protocol = "tcp"
-        cidr_blocks = [var.myip,"20.111.8.195/32"]
+        cidr_blocks = [var.myip,var.ansible-ip,var.var.jenkins-ip]
 
     }
 
