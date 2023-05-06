@@ -53,7 +53,7 @@ pipeline {
                         remote.user = user
                         remote.identityFile = keyfile
                         sshCommand remote: remote, command: "cd ansible-project && sudo ansible-playbook deploy-docker.yaml"
-
+                   }
                 }
             }
         }
