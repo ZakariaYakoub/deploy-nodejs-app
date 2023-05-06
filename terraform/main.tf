@@ -3,31 +3,31 @@ provider "aws" {
 }
 
 variable "ansible-ip" {
-    defaults = "20.111.8.195/32"
+    default = "20.111.8.195/32"
 }
 variable "jenkins-ip" {
-    defaults = "139.162.149.223/32"
+    default = "139.162.149.223/32"
 }
 variable "vpc-cidr-block" {
-    defaults = "10.0.0.0/16"
+    default = "10.0.0.0/16"
 }
 variable "subnet-cidr-block" {
-    defaults = "10.0.10.0/24"
+    default = "10.0.10.0/24"
 }
 variable "avail_zone" {
-    defaults = "eu-central-1b"
+    default = "eu-central-1b"
 }
 variable "env_prefix" {
-    defaults = "dev"
+    default = "dev"
 }
 variable "myip" {
-    defaults = "41.249.6.55/32"
+    default = "41.249.6.55/32"
 }
 variable "pub_key_location" {
-    defaults = "/var/jenkins_home/.ssh/id_rsa.pub"
+    default = "/var/jenkins_home/.ssh/id_rsa.pub"
 }
 variable "private_key_location" {
-    defaults = "/var/jenkins_home/.ssh/id_rsa"
+    default = "/var/jenkins_home/.ssh/id_rsa"
 }
 
 
