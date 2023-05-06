@@ -12,6 +12,8 @@
         host: '{{ (ansible_ssh_host|default(ansible_host))|default(inventory_hostname) }}'
       vars:
         ansible_connection: local
+
+
 - name: install docker
   hosts: aws_ec2
   become: true
@@ -29,3 +31,45 @@
       systemd:
         name: docker
         state: started
+
+- name: install docker-compose
+  hosts: aws_ec2
+  become: true
+  tasks:
+    - name: Download Docker Compose binary
+      get_url:
+        url: https://github.com/docker/compose/releases/latest/download/docker-compose-Linux-{{lookup('pipe', 'uname -m')}}
+        dest: /usr/local/bin/docker-compose
+        mode: +x
+
+- name: start docker container 
+  hosts: aws_ec2
+  become: true
+  vars_files:
+    - project-vars
+  tasks:
+    - name: Install Docker SDK for Python
+      pip:
+        name: 
+          - "docker<5"
+          - docker-compose 
+      become: yes
+
+    - name: Setup more docker dependencies
+      pip:
+        name: "websocket-client<1" 
+      become: yes
+
+    - name: copy docker compose file
+      copy:
+        src: docker-compose.yaml
+        dest: /home/ec2-user/docker-compose.yaml
+    - name: docker login
+      community.docker.docker_login:
+        registry_url: https://index.docker.io/v1/
+        username: zikou
+        password: "{{docker_password}}"
+    - name: start containers defined in the docker-compose file
+      community.docker.docker_compose:
+        project_src: /home/ec2-user/
+        state: present
