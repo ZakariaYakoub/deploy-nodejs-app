@@ -1,7 +1,7 @@
-#My Portfolio
+# My Portfolio
 This project is an example of deploying a Node.js app to an EC2 instance on AWS using Jenkins, Ansible, Terraform, and Docker. The project includes a pipeline that automates the building and deployment of the app to the EC2 instance.
 
-##Project Structure
+## Project Structure
 The project is structured as follows:
   ansible/ : contains Ansible files to configure EC2 instances and deploy the app into it
   app/ : contains the HTML and Node.js app
@@ -10,7 +10,7 @@ The project is structured as follows:
   Jenkinsfile : contains the Jenkins pipeline configuration to automate the deployment process
   package.json : contains the Node.js app dependencies
 
-##Deployment Pipeline
+## Deployment Pipeline
 The deployment pipeline consists of the following stages:
   1- Build Docker image: In this stage, the Docker image is built for the app.
   2- Push image to DockerHub: In this stage, the built Docker image is pushed to DockerHub.
